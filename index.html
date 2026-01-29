@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>استوديو ألوان للطباعة | تصميم بلايز ومنتجات مخصصة</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <span class="logo">CA</span>
+        <div>
+          <h1>استوديو ألوان للطباعة</h1>
+          <p>نحوّل أفكارك إلى بلايز ومنتجات نابضة بالحياة</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="#products">المنتجات</a>
+        <a href="#ai-studio">الاستوديو الذكي</a>
+        <a href="#features">الخدمات</a>
+        <a href="#cart">السلة</a>
+        <a href="#profile">حسابي</a>
+      </nav>
+      <button class="cta">ابدأ التصميم الآن</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">جديد</span>
+          <h2>اطبع تصميمك المفضل خلال 48 ساعة</h2>
+          <p>
+            نصمم ونطبع بلايز، هوديز، أكواب، حقائب، ودفاتر بهوية شركتك أو برسوماتك الخاصة.
+            استمتع بأداة ذكاء اصطناعي لتوليد فكرة التصميم، ثم عدّلها مباشرة قبل إرسال الطلب.
+          </p>
+          <div class="hero-actions">
+            <button class="cta">إنشاء تصميم بالذكاء</button>
+            <button class="ghost">تصفح المنتجات</button>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <h3>+12k</h3>
+              <p>تصميم منفذ</p>
+            </div>
+            <div>
+              <h3>98%</h3>
+              <p>رضا العملاء</p>
+            </div>
+            <div>
+              <h3>24/7</h3>
+              <p>دعم مباشر</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>لوحة الطلب السريع</h3>
+          <p>اختر المنتج، أضف التصميم، حدّد المقاس، ثم أرسل الطلب في دقائق.</p>
+          <ul>
+            <li>معاينة فورية للمقاس والألوان.</li>
+            <li>حفظ التصاميم في مكتبة شخصية.</li>
+            <li>عروض أسعار للشركات والطلبات الكبيرة.</li>
+          </ul>
+          <button class="cta full">ابدأ الآن</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>المنتجات الأكثر طلبًا</h2>
+            <p>اختر المنتج المناسب وابدأ تخصيصه حسب ذوقك.</p>
+          </div>
+          <div class="filters">
+            <button class="filter active" data-filter="all">الكل</button>
+            <button class="filter" data-filter="tees">بلايز</button>
+            <button class="filter" data-filter="hoodies">هوديز</button>
+            <button class="filter" data-filter="accessories">إكسسوارات</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section id="ai-studio" class="section alt">
+      <div class="container ai-grid">
+        <div>
+          <span class="badge">AI Studio</span>
+          <h2>ولّد تصميمك خلال ثوانٍ</h2>
+          <p>
+            اكتب وصفًا لفكرتك، اختر الألوان، ثم دع الذكاء الاصطناعي يقترح لك تصميمًا فريدًا.
+            بعد ذلك، عدّل النص أو الألوان قبل اعتماد التصميم النهائي.
+          </p>
+          <div class="ai-controls">
+            <label>
+              وصف التصميم
+              <input id="promptInput" type="text" placeholder="مثال: شعار عصري مع نخلة وألوان دافئة" />
+            </label>
+            <label>
+              ألوان الهوية
+              <div class="color-palette" id="colorPalette">
+                <button class="color" data-color="#111827" style="background: #111827;"></button>
+                <button class="color" data-color="#2563eb" style="background: #2563eb;"></button>
+                <button class="color" data-color="#f97316" style="background: #f97316;"></button>
+                <button class="color" data-color="#22c55e" style="background: #22c55e;"></button>
+                <button class="color" data-color="#ec4899" style="background: #ec4899;"></button>
+              </div>
+            </label>
+            <label>
+              أضف نصك الخاص
+              <input id="customText" type="text" placeholder="مثال: فريق المبدعين 2024" />
+            </label>
+            <label>
+              ارفع شعارك أو صورتك
+              <input id="imageUpload" type="file" accept="image/*" />
+            </label>
+            <div class="range-group">
+              <label>
+                حجم الشعار
+                <input id="scaleRange" type="range" min="50" max="200" value="110" />
+              </label>
+              <label>
+                تدوير الشعار
+                <input id="rotateRange" type="range" min="-30" max="30" value="0" />
+              </label>
+            </div>
+            <button class="cta" id="generateBtn">توليد التصميم</button>
+          </div>
+        </div>
+        <div class="ai-preview">
+          <div class="preview-card">
+            <div class="preview-header">
+              <h3>المعاينة</h3>
+              <div class="preview-actions">
+                <button class="ghost" id="resetPreview">إعادة ضبط</button>
+                <button class="cta" id="saveToLibrary">حفظ في المكتبة</button>
+              </div>
+            </div>
+            <canvas id="designCanvas" width="360" height="360"></canvas>
+            <p class="hint">يمكنك تحريك النص وتغيير الألوان قبل الإرسال.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>خدمات متكاملة لكل الطلبات</h2>
+          <p>كل ما تحتاجه لإطلاق حملة تسويقية أو زي فريق عمل موحّد.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>إدارة طلبات الشركات</h3>
+            <p>لوحة خاصة للطلبات الكبيرة، عروض سعر فورية، وجدولة التسليم حسب الفروع.</p>
+          </div>
+          <div class="feature">
+            <h3>تعديل مباشر على التصميم</h3>
+            <p>أدوات تعديل سريعة للنصوص، الأيقونات، ومقاسات الطباعة قبل اعتماد الطلب.</p>
+          </div>
+          <div class="feature">
+            <h3>شحن سريع ومتابعة</h3>
+            <p>تتبع حالة الطلب، إشعارات تلقائية، وخيارات شحن متعددة داخل وخارج المدينة.</p>
+          </div>
+          <div class="feature">
+            <h3>مكتبة تصاميم محفوظة</h3>
+            <p>احفظ أفضل تصاميمك لإعادة الطلب أو تطويرها لاحقًا بضغطة واحدة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cart" class="section alt">
+      <div class="container cart-grid">
+        <div>
+          <h2>سلة المشتريات</h2>
+          <p>راجع العناصر المختارة، حدّد الكمية، ثم أكمل الطلب.</p>
+          <div class="cart-items" id="cartItems">
+            <div class="empty">سلتك فارغة حتى الآن.</div>
+          </div>
+        </div>
+        <div class="cart-summary">
+          <h3>ملخص الطلب</h3>
+          <div class="summary-row">
+            <span>الإجمالي الفرعي</span>
+            <strong id="subtotal">0 ر.س</strong>
+          </div>
+          <div class="summary-row">
+            <span>خدمة التصميم</span>
+            <strong>مجانية</strong>
+          </div>
+          <div class="summary-row total">
+            <span>الإجمالي الكلي</span>
+            <strong id="total">0 ر.س</strong>
+          </div>
+          <button class="cta full">إكمال الدفع</button>
+          <p class="hint">تحتاج إلى تسجيل الدخول لحفظ السلة تلقائيًا.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" class="section">
+      <div class="container profile-grid">
+        <div class="profile-card">
+          <h2>الملف الشخصي</h2>
+          <p>مرحبًا بك مجددًا، <strong>ليلى</strong> 👋</p>
+          <div class="profile-details">
+            <div>
+              <span>البريد الإلكتروني</span>
+              <strong>leila@colorart.sa</strong>
+            </div>
+            <div>
+              <span>الحالة</span>
+              <strong>عميل ذهبي</strong>
+            </div>
+            <div>
+              <span>تصاميم محفوظة</span>
+              <strong id="libraryCount">3 تصاميم</strong>
+            </div>
+          </div>
+          <button class="ghost full">تعديل البيانات</button>
+        </div>
+        <div class="orders">
+          <h3>الطلبات الأخيرة</h3>
+          <div class="order">
+            <div>
+              <strong>طقم بلايز لفعالية التسويق</strong>
+              <span>قيد الطباعة · 24 قطعة</span>
+            </div>
+            <button class="ghost">تتبع</button>
+          </div>
+          <div class="order">
+            <div>
+              <strong>هودي فريق التصميم</strong>
+              <span>تم الشحن · 8 قطع</span>
+            </div>
+            <button class="ghost">تفاصيل</button>
+          </div>
+          <div class="order">
+            <div>
+              <strong>أكواب لشركة حلول</strong>
+              <span>تم التسليم · 40 قطعة</span>
+            </div>
+            <button class="ghost">إعادة الطلب</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>أسئلة شائعة</h2>
+          <p>إجابات سريعة عن أكثر الاستفسارات شيوعًا.</p>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>كم يستغرق تنفيذ الطلب؟</summary>
+            <p>الطلبات الصغيرة تُنفذ خلال 24-48 ساعة، والطلبات الكبيرة حسب الجدول المتفق عليه.</p>
+          </details>
+          <details>
+            <summary>هل يمكن تعديل التصميم بعد الإرسال؟</summary>
+            <p>نعم، يمكنك التعديل قبل مرحلة الطباعة النهائية من خلال لوحة المتابعة.</p>
+          </details>
+          <details>
+            <summary>هل تقدمون خدمة تصميم احترافية؟</summary>
+            <p>لدينا فريق تصميم محترف يمكنه تطوير هويتك البصرية أو تحسين التصميم المولد.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>استوديو ألوان للطباعة</h3>
+        <p>خدمة تصميم وطباعة احترافية للبلايز والمنتجات الدعائية.</p>
+      </div>
+      <div>
+        <h4>خدماتنا</h4>
+        <ul>
+          <li>طباعة رقمية وDTF</li>
+          <li>تصميم بالذكاء الاصطناعي</li>
+          <li>طلبات الشركات والفعاليات</li>
+          <li>شحن داخلي وخارجي</li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li>الهاتف: 9200 123 45</li>
+          <li>واتساب: 055 123 4567</li>
+          <li>البريد: hello@colorart.sa</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2024 جميع الحقوق محفوظة لدى استوديو ألوان للطباعة.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
